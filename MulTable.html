@@ -1,0 +1,148 @@
+﻿﻿<html lang="th">
+<Title>ตารางสูตรคูณ</Title>
+<head>
+<style>
+  input[type="number"] {width: 48px;}
+</style>
+<script>
+function changeKey(key) {
+	keyinput.value = key;
+	for (let i=1; i<=12; i++ ) {
+		var k = document.getElementById("key"+i);
+		var r = document.getElementById("result"+i);
+
+		k.innerHTML = key;
+		r.value = (Math.random() > 0.5) ? "" : key*i;
+		r.style.backgroundColor = "white";
+	}
+	result1.focus();
+}
+
+function verifyResult() {
+
+	var key = keyinput.value;
+	
+	for (let i=1; i<=12; i++ ) {	
+		var r = document.getElementById("result"+i);
+		r.style.backgroundColor = (r.value == key*i) ? "lightgreen" : "pink";
+	}	
+}
+
+function enterKeyPressed(event, nextInput) {
+      if (event.keyCode == 13) {
+		 nextInput.focus();
+      }
+   }
+</script>
+</head>
+
+<Body>
+  <H1>ตารางสูตรคูณ</H1>
+  
+    เลือกแม่  <input id="keyinput" type=number value=2> 
+		<input type=button value="OK" onclick="changeKey(keyinput.value)"> 
+<br><br>
+	<input type=button value="2" onclick="changeKey(2)">
+	<input type=button value="3" onclick="changeKey(3)">
+	<input type=button value="4" onclick="changeKey(4)">
+	<input type=button value="5" onclick="changeKey(5)">
+	<input type=button value="6" onclick="changeKey(6)">
+	<input type=button value="7" onclick="changeKey(7)">
+	<input type=button value="8" onclick="changeKey(8)">
+	<input type=button value="9" onclick="changeKey(9)">
+	<input type=button value="10" onclick="changeKey(10)">
+	<input type=button value="11" onclick="changeKey(11)">
+	<input type=button value="12" onclick="changeKey(12)">
+<br><br>
+<form id="inputform">
+<Table>
+	<TR>
+		<TD><div id="key1"/></TD>
+		<TD>x</TD>
+		<TD>1</TD>
+		<TD>=</TD>
+		<TD><input id="result1" type=number onkeypress="enterKeyPressed(event, result2)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key2"/></TD>
+		<TD>x</TD>
+		<TD>2</TD>
+		<TD>=</TD>
+		<TD><input id="result2" type=number onkeypress="enterKeyPressed(event, result3)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key3"/></TD>
+		<TD>x</TD>
+		<TD>3</TD>
+		<TD>=</TD>
+		<TD><input id="result3" type=number onkeypress="enterKeyPressed(event, result4)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key4"/></TD>
+		<TD>x</TD>
+		<TD>4</TD>
+		<TD>=</TD>
+		<TD><input id="result4" type=number onkeypress="enterKeyPressed(event, result5)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key5"/></TD>
+		<TD>x</TD>
+		<TD>5</TD>
+		<TD>=</TD>
+		<TD><input id="result5" type=number onkeypress="enterKeyPressed(event, result6)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key6"/></TD>
+		<TD>x</TD>
+		<TD>6</TD>
+		<TD>=</TD>
+		<TD><input id="result6" type=number onkeypress="enterKeyPressed(event, result7)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key7"/></TD>
+		<TD>x</TD>
+		<TD>7</TD>
+		<TD>=</TD>
+		<TD><input id="result7" type=number onkeypress="enterKeyPressed(event, result8)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key8"/></TD>
+		<TD>x</TD>
+		<TD>8</TD>
+		<TD>=</TD>
+		<TD><input id="result8" type=number onkeypress="enterKeyPressed(event, result9)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key9"/></TD>
+		<TD>x</TD>
+		<TD>9</TD>
+		<TD>=</TD>
+		<TD><input id="result9" type=number onkeypress="enterKeyPressed(event, result10)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key10"/></TD>
+		<TD>x</TD>
+		<TD>10</TD>
+		<TD>=</TD>
+		<TD><input id="result10" type=number onkeypress="enterKeyPressed(event, result11)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key11"/></TD>
+		<TD>x</TD>
+		<TD>11</TD>
+		<TD>=</TD>
+		<TD><input id="result11" type=number onkeypress="enterKeyPressed(event, result12)"></TD>
+	</TR>
+	<TR>
+		<TD><div id="key12"/></TD>
+		<TD>x</TD>
+		<TD>12</TD>
+		<TD>=</TD>
+		<TD><input id="result12" type=number onkeypress="enterKeyPressed(event, verifyButton)"></TD>
+	</TR>
+	</Table>
+	</form>
+	<br>
+	<input id="verifyButton" type=button value="ตรวจคำตอบ" onclick="verifyResult()"> 
+</Body>
+</html>
